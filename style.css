@@ -31,6 +31,7 @@ h4 {
 
 .img {
   display: block;
+  width: auto;
 }
 
 /*@media (min-width: 960px) {
