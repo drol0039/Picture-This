@@ -9,13 +9,13 @@ body {
 
 .header {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto auto;
   align-items: center;
   background-color: cadetblue;
 }
 
 .title {
-  padding: 50px 25px;
+ padding: 50px 150px;
   text-align: center;
 }
 
@@ -29,12 +29,32 @@ h4 {
   font-weight: 300;
 }
 
-img {
+.img {
   display: block;
 }
 
+
 @media (min-width: 960px) {
   .header {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 1fr;
+  }
+
+  .img {
+    display: grid ;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));;
+    /*gap: 20px;*/
+    justify-content: center;
+  }
+
+  .img img {
+    max-width: 100%; 
   }
 }
+
+
+@media (max-width: 959px) {
+  .header{
+    grid-template-columns: 1fr;
+  }
+}
+
